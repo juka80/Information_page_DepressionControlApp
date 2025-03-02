@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DepressionControlApp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #a4cff9;
+            height: 100%;
+        }
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 50vh;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .header img {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .header span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .brain-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .brain-image img {
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+        .btn-light-pink {
+            background-color: #ffbdc5;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1.5rem;
+            width: 100%;
+            max-width: 220px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-light-pink:hover {
+            background-color: #ffcccb;
+        }
+        .logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .all-logo {
+            width: 900px; 
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .header span {
+                font-size: 1.5rem;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .btn-light-pink {
+                font-size: 1rem;
+                padding: 8px 12px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .brain-image img {
+                display: flex;
+                justify-content: center;
+                margin-top: -35px;
+                margin-bottom: 10px;
+                max-width: 90%;
+            }
+            .logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            }
+            .all-logo {
+            width: 350px; 
+            height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <img src="images/logo1.png" alt="Logo">
+            <span>DepressionControlApp</span>
+        </div>
+        <div class="brain-image">
+            <img src="images/brain.png" alt="Brain">
+        </div>
+        <div class="main-title">POMÓŻ NAM WESPRZEĆ CIEBIE</div>
+        <div class="buttons">
+            <a href="project.html" class="btn btn-lg btn-light-pink">Cel projektu</a>
+            <a href="about.html" class="btn btn-lg btn-light-pink">O nas</a>
+            <a href="questionnaire.html" class="btn btn-lg btn-light-pink">WYPEŁNIJ ANKIETĘ</a>
+        </div>
+        <div class="logos">
+            <img src="images/all_logo.png" alt="All logo" class="all-logo">
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
