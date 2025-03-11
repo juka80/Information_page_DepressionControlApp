@@ -1,165 +1,287 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cel Projektu - DepressionControlApp</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #a4cff9;
-            height: 100%;
-        }
+      body,
+      html {
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: "Arial", sans-serif;
+        background-color: #92c5f8;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        padding: 10px 20px;
+        background-color: #92c5f8 !important;
+      }
+      .custom-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      .navbar-collapse {
+        text-align: center;
+      }
+      .nav-link {
+        background-color: #ffbdc5;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px !important;
+        margin: 5px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+      }
+      .nav-link:hover {
+        background-color: #ffcccb;
+        color: #ffffff;
+      }
+      .container-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        flex: 1;
+      }
+      .content {
+        font-size: 1.2rem;
+        color: #ffffff;
+        max-width: 1200px;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 40px;
+      }
+      .custom-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
 
-        .navbar {
-            padding: 10px 20px;
-            background-color: #a4cff9 !important;
+      .custom-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+      }
+
+      .custom-list li span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        background-color: #92c5f8;
+        padding: 10px 0;
+      }
+      .all-logo {
+        width: 900px;
+        height: auto;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 700px;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
         }
         .custom-brand {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+          font-size: 1.2rem;
         }
-        .navbar-toggler {
-            border: none;
-            outline: none;
-            box-shadow: none;
-        }
-        .navbar-collapse {
-            text-align: center;
-        }
-        .nav-link {
-            background-color: #ffbdc5;
-            color: #ffffff;
-            border: none;
-            border-radius: 25px;
-            padding: 12px 20px !important;
-            margin: 10px;
-            font-size: 1.3rem;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-        }
-        .nav-link:hover {
-            background-color: #ffcccb;
-            color: #ffffff;
-        }
-        .container-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 50vh;
-            padding: 10px;
-        }
-
         .content {
-            font-size: 1.2rem;
-            color: #ffffff;
-            max-width: 800px;
-            text-align: left;
-            margin-top: 15px;
-            margin-bottom: 40px;
+          font-size: 1rem;
         }
-
-        .logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
         .all-logo {
-            width: 900px;
-            height: auto;
+          width: 380px;
+          height: auto;
         }
-
-        @media (max-width: 991px) {
-            .navbar-nav {
-                text-align: center;
-                width: 100%;
-            }
-
-            .content {
-                font-size: 1rem;
-            }
-
-            .all-logo {
-                width: 700px;
-                height: auto;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .navbar-nav {
-                text-align: center;
-                width: 100%;
-            }
-            .custom-brand {
-            font-size: 1.2rem;
-
-        }
-            .content {
-                font-size: 1rem;
-            }
-
-            .all-logo {
-                width: 380px;
-                height: auto;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center mx-auto" href="index.html">
-                <img src="images/logo1.png" alt="Logo" width="50" class="me-2">
-                <span class="custom-brand">DepressionControlApp</span>
-            </a>
-            <button class="navbar-toggler" type="button" 
-                    data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" 
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" 
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                <ul class="navbar-nav d-flex flex-lg-row align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="project.html">Cel projektu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="questionnaire.html">WYPEŁNIJ ANKIETĘ</a>
-                    </li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand d-flex align-items-center mx-auto"
+          href="index.html"
+        >
+          <img
+            src="images/LOGO_MOZG_biale.svg"
+            alt="Logo"
+            width="50"
+            class="me-2"
+          />
+          <span class="custom-brand">DepressionControlApp</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarTogglerDemo02"
+        >
+          <ul class="navbar-nav d-flex flex-xl-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="project.html">Cel projektu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">O nas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="questionnaire.html">WYPEŁNIJ ANKIETĘ</a>
+            </li>
+          </ul>
         </div>
-    </nav>    
+      </div>
+    </nav>
     <div class="container-content">
-        <div class="content">
-            <p>Przykładowe zdanie 1: Naszym celem jest wsparcie ludzi w walce z depresją poprzez dostarczanie dostępnych narzędzi i informacji.</p>
-            <p>Przykładowe zdanie 2: Chcemy zapewnić bezpieczną przestrzeń, gdzie każdy może znaleźć wsparcie i zrozumienie.</p>
-            <p>Przykładowe zdanie 3: Projekt ten powstał z myślą o tym, by pomóc ludziom odzyskać radość życia.</p>
-            <p>Przykładowe zdanie 4: Ważne jest, aby każdy człowiek czuł się ważny i doceniony.</p>
-            <p>Przykładowe zdanie 5: Działamy na rzecz podnoszenia świadomości na temat zdrowia psychicznego.</p>
-        </div>
-        <div class="logos">
-            <img src="images/all_logo.png" alt="All logo" class="all-logo">
-        </div>
+      <div class="content">
+        <h3>
+          <strong>
+            DepressionControlApp – wsparcie zdrowia psychicznego społeczności
+            FarU
+          </strong>
+        </h3>
+        <p>
+          Depresja to cichy przeciwnik, który każdego roku odbiera milionom
+          ludzi radość życia. To nie tylko chwilowy smutek, ale stan, który
+          potrafi sparaliżować codzienne funkcjonowanie – utrudnić naukę, pracę,
+          relacje. Niestety, wiele osób zmaga się z nią w samotności, nie mając
+          dostępu do odpowiedniej pomocy lub nie wiedząc, gdzie jej szukać.
+        </p>
+        <p>
+          DepressionControlApp to narzędzie, które może pomóc w tym pierwszym,
+          najważniejszym kroku – zrozumieniu swojego samopoczucia i podjęciu
+          świadomego działania. Tworzymy aplikację, która pozwoli na
+          monitorowanie nastroju, wykrywanie niepokojących zmian i dostarczanie
+          odpowiedniego wsparcia, zanim objawy się nasilą.
+        </p>
+        <p>
+          Aplikacja jest skierowana przede wszystkim do osób zmagających się z
+          depresją, ale także tych, którzy chcą lepiej zarządzać swoim zdrowiem
+          psychicznym. Nie zastąpi terapii, lecz może być jej cennym
+          uzupełnieniem.
+        </p>
+        <h4><strong>Jak będzie działać DepressionControlApp?</strong></h4>
+        <ul class="custom-list">
+          <li>
+            ✔ <strong>Monitorowanie nastroju i emocji</strong> – proste,
+            intuicyjne narzędzie pozwalające śledzić zmiany samopoczucia i
+            lepiej zrozumieć własne emocje.
+          </li>
+          <li>
+            ✔ <strong>Wirtualny opiekun</strong> – wsparcie, które analizuje
+            Twoje odpowiedzi i podsuwa spersonalizowane wskazówki dotyczące
+            radzenia sobie z trudnościami emocjonalnymi.
+          </li>
+          <li>
+            ✔ <strong>Elementy grywalizacji</strong> – system motywacyjny, który
+            pomoże w budowaniu pozytywnych nawyków i dbaniu o zdrowie psychiczne
+            w angażujący sposób.
+          </li>
+          <li>
+            ✔ <strong>Raporty dla terapeutów</strong> – jeśli korzystasz z
+            pomocy specjalisty, aplikacja pozwoli na generowanie raportów, które
+            mogą wspomóc proces terapii dając wgląd w czas pomiędzy wizytami i
+            pomóc w dostosowaniu metod leczenia.
+          </li>
+          <li>
+            ✔ <strong>Algorytmy wykrywające ryzyko</strong> – aplikacja
+            wykorzysta analizę wzorców zachowań i zmian nastroju, aby
+            identyfikować momenty, w których użytkownik może potrzebować
+            wsparcia. Jeśli wykryje niepokojące sygnały, zasugeruje skorzystanie
+            z telefonu wsparcia lub innych form pomocy.
+          </li>
+          <li>
+            ✔ <strong>Wydarzenia uczelni Fahrenheita</strong> – w aplikacji
+            znajdziesz zakładkę z informacjami o spotkaniach, warsztatach i
+            wydarzeniach organizowanych przez Centrum Wsparcia Psychicznego i
+            inne jednostki uczelni, które mogą pomóc w budowaniu odporności
+            psychicznej i nawiązywaniu kontaktów.
+          </li>
+        </ul>
+        <h4>
+          <strong
+            >Aplikacja jest w fazie rozwoju – możesz pomóc ją ulepszyć!</strong
+          >
+        </h4>
+        <p>
+          <strong>Depresja nie musi być walką w samotności.</strong> Tworzymy
+          narzędzie, które może pomóc osobom w kryzysie, ale także każdemu, kto
+          chce lepiej zadbać o swoją psychikę. Chcemy, aby
+          <strong>DepressionControlApp</strong> jak najlepiej odpowiadała na
+          realne potrzeby studentów i pracowników akademickich.
+        </p>
+        <p>
+          Dlatego
+          <strong>zbieramy opinie poprzez ankietę dostępną na stronie</strong> –
+          Twoje doświadczenie i sugestie pomogą nam dopracować funkcjonalności,
+          aby aplikacja była jak najbardziej użyteczna i skuteczna.
+        </p>
+        <p>
+          <strong
+            >Wypełnij ankietę i pomóż nam stworzyć narzędzie, które może realnie
+            wspierać społeczność akademicką.</strong
+          >
+          Razem możemy sprawić, że pomoc stanie się bardziej dostępna – w
+          kieszeni każdego, kto jej potrzebuje.
+        </p>
+      </div>
     </div>
-
+    <div class="logos">
+      <img src="images/all_logo.png" alt="All logo" class="all-logo" />
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+  </body>
 </html>

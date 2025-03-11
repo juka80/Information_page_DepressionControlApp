@@ -1,210 +1,471 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cel Projektu - DepressionControlApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #a4cff9;
-            height: 100%;
-        }
-        .navbar {
-            padding: 10px 20px;
-            background-color: #a4cff9 !important;
-        }
-        .custom-brand {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .navbar-toggler {
-            border: none;
-            outline: none;
-            box-shadow: none;
+      body,
+      html {
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: "Arial", sans-serif;
+        background-color: #92c5f8;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        padding: 10px 20px;
+        background-color: #92c5f8 !important;
+      }
+      .custom-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      .navbar-collapse {
+        text-align: center;
+      }
+      .nav-link {
+        background-color: #ffbdc5;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px !important;
+        margin: 5px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+      }
+      .nav-link:hover {
+        background-color: #ffcccb;
+        color: #ffffff;
+      }
+      .container-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        flex: 1;
+      }
+      .content {
+        font-size: 1.3rem;
+        color: #ffffff;
+        max-width: 1200px;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 40px;
+      }
+      .custom-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .custom-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+      }
+
+      .custom-list li span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      /* Facebook, button in text */
+      .white-link {
+        color: white;
+        text-decoration: none;
+      }
+      .white-link:hover {
+        text-decoration: underline;
+      }
+      .image-container img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 45px;
+      }
+      .centered-text {
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .columns-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px; 
+        margin-top: 20px; 
+      }
+
+      .column {
+        max-width: 800px;
+        flex: 1;
+        color: #ffffff; 
+        font-size: 1.2rem;
+      }
+      .column p {
+        text-align: justify;
+        hyphens: auto;
+      }
+      .column h3 {
+        color: #ffffff; 
+      }
+      .subheadings {
+        color: #ffcccb;
+
+      }
+      .icons-container {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .icons-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #92c5f8;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+      .icons-container a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+      .icons-container img {
+        width: 30px;
+        height: 30px;
+      }
+      .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        background-color: #92c5f8;
+        padding: 20px 0;
+      }
+      .all-logo {
+        width: 900px;
+        height: auto;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
         }
         .navbar-collapse {
-            text-align: center;
-        }
-        .nav-link {
-            background-color: #ffbdc5;
-            color: #ffffff;
-            border: none;
-            border-radius: 25px;
-            padding: 12px 20px !important;
-            margin: 10px;
-            font-size: 1.3rem;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-        }
-        .nav-link:hover {
-            background-color: #ffcccb;
-            color: #ffffff;
-        }
-        .container-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 50vh;
-            padding: 10px;
+          position: static;
         }
         .content {
-            font-size: 1.2rem;
-            color: #ffffff;
-            max-width: 800px;
-            text-align: left;
-            margin-top: 15px;
-            margin-bottom: 40px;
-        }
-        .image-container {
-            margin-bottom: 25px;
-        }
-        .image-container img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .icons-container {
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .icons-container a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #a4cff9;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-        .icons-container a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-        .icons-container img {
-            width: 30px;
-            height: 30px;
-        }
-        .logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          font-size: 1rem;
         }
         .all-logo {
-            width: 900px;
-            height: auto;
+          width: 700px;
+          height: auto;
         }
+      }
 
-        @media (max-width: 991px) {
-            .navbar-nav {
-                text-align: center;
-                width: 100%;
-            }
-            .navbar-collapse {
-                position: static;
-            }
-            .content {
-                font-size: 1rem;
-            }
-            .all-logo {
-                width: 700px;
-                height: auto;
-            }
+      @media (max-width: 700px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
         }
-
-        @media (max-width: 700px) {
-            .navbar-nav {
-                text-align: center;
-                width: 100%;
-            }
-            .custom-brand {
-                font-size: 1.2rem;
-                font-weight: bold;
-                color: #ffffff;
-                display: flex;
-                align-items: center;
-                gap: 20px;
-            }
-            .content {
-                font-size: 1rem;
-            }
-            .all-logo {
-                width: 380px;
-                height: auto;
-            }
-            .content {
-                margin-top: 0px;
-                margin-bottom: 40px;
-            }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
         }
+        .custom-brand {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 380px;
+          height: auto;
+        }
+        .content {
+          margin-top: 0px;
+          margin-bottom: 40px;
+        }
+        .columns-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .column {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
     </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center mx-auto" href="index.html">
-                <img src="images/logo1.png" alt="Logo" width="50" class="me-2">
-                <span class="custom-brand">DepressionControlApp</span>
-            </a>
-            <button class="navbar-toggler" type="button" 
-                    data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" 
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" 
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                <ul class="navbar-nav d-flex flex-lg-row align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="project.html">Cel projektu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="questionnaire.html">WYPEŁNIJ ANKIETĘ</a>
-                    </li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand d-flex align-items-center mx-auto"
+          href="index.html"
+        >
+          <img
+            src="images/LOGO_MOZG_biale.svg"
+            alt="Logo"
+            width="50"
+            class="me-2"
+          />
+          <span class="custom-brand">DepressionControlApp</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarTogglerDemo02"
+        >
+          <ul class="navbar-nav d-flex flex-xl-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="project.html">Cel projektu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">O nas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="questionnaire.html">WYPEŁNIJ ANKIETĘ</a>
+            </li>
+          </ul>
         </div>
-    </nav>   
+      </div>
+    </nav>
     <div class="container-content">
-        <div class="content">
-            <p>Przykładowe zdanie 1: Naszym celem jest wsparcie ludzi w walce z depresją poprzez dostarczanie dostępnych narzędzi i informacji.</p>
-            <p>Przykładowe zdanie 2: Chcemy zapewnić bezpieczną przestrzeń, gdzie każdy może znaleźć wsparcie i zrozumienie.</p>
-            <p>Przykładowe zdanie 3: Projekt ten powstał z myślą o tym, by pomóc ludziom odzyskać radość życia.</p>
-            <p>Przykładowe zdanie 4: Ważne jest, aby każdy człowiek czuł się ważny i doceniony.</p>
-            <p>Przykładowe zdanie 5: Działamy na rzecz podnoszenia świadomości na temat zdrowia psychicznego.</p>
+      <div class="content">
+        <p>
+          Jako członkowie <strong>Koła Naukowego PatientX</strong> z Gdańskiego
+          Uniwersytetu Medycznego oraz
+          <strong>Koła Naukowego DeepDive</strong> z Uniwersytetu Gdańskiego,
+          łączymy siły, aby tworzyć innowacyjne rozwiązania na styku medycyny i
+          sztucznej inteligencji.
+        </p>
+        <p>
+          Z dumą informujemy, że nasz projekt
+          <strong>DepressionControlApp</strong> zdobył
+          <strong
+            >II miejsce w konkursie Mistrzowie Współpracy Fahrenheita</strong
+          >
+          w kategorii projektów badawczo-naukowych. Celem projektu jest
+          stworzenie aplikacji wspierającej zdrowie psychiczne studentów i
+          młodych dorosłych, wykorzystującej AI do monitorowania nastroju i
+          personalizacji wsparcia terapeutycznego. Działamy interdyscyplinarnie,
+          integrując
+          <strong
+            >sztuczną inteligencję, neuroinformatykę i analizę danych
+            biomedycznych</strong
+          >, aby rozwijać innowacyjne technologie mające realny wpływ na zdrowie
+          psychiczne.
+        </p>
+        <p>Poznaj nas i nasze kompetencje!</p>
+        <h3 class="subheadings"><strong>Koło Naukowe DeepDive</strong></h3>
+        <p>
+          <strong
+            >Eksplorujemy sztuczną inteligencję. Tworzymy innowacje. Łączymy
+            naukę z praktyką.</strong
+          >
+        </p>
+        <p>
+          DeepDive to interdyscyplinarna społeczność studentów i doktorantów z
+          różnych wydziałów, działająca przy Wydziale Matematyki, Fizyki i
+          Informatyki Uniwersytetu Gdańskiego, skoncentrowana na badaniach i
+          wdrażaniu nowoczesnych technologii opartych na sztucznej inteligencji.
+          Nasza działalność łączy teorię z praktyką, dostarczając studentom
+          narzędzi do rozwiązywania rzeczywistych problemów w nauce i przemyśle.
+        </p>
+        <h4><strong>Obszary działalności</strong></h4>
+        <ul class="custom-list">
+          <li>
+            🔹 <strong>Zaawansowane systemy AI</strong> – projektowanie i
+            implementacja modeli uczenia maszynowego, sieci neuronowych oraz
+            algorytmów głębokiego uczenia wykorzystywanych w analityce danych,
+            diagnostyce i automatyzacji procesów.
+          </li>
+          <li>
+            🔹 <strong>Data Science i modelowanie predykcyjne</strong> –
+            eksploracja, wizualizacja i analiza wielkoskalowych zbiorów danych,
+            budowanie modeli prognostycznych oraz optymalizacja procesów
+            decyzyjnych.
+          </li>
+          <li>
+            🔹 <strong>Intensywne programy szkoleniowe</strong> – dostarczamy
+            solidnych podstaw programistycznych, a także organizujemy
+            specjalistyczne warsztaty i bootcampy z AI.
+          </li>
+          <li>
+            🔹 <strong>Tworzenie oprogramowania i aplikacji AI</strong> –
+            projektowanie i implementacja narzędzi oraz systemów opartych na
+            sztucznej inteligencji, rozwój aplikacji wykorzystujących uczenie
+            maszynowe i automatyzację procesów.
+          </li>
+          <li>
+            🔹 <strong>Projekty badawczo-rozwojowe</strong> – realizacja
+            innowacyjnych inicjatyw we współpracy z ekspertami, ośrodkami
+            naukowymi oraz partnerami biznesowymi.
+          </li>
+          <li>
+            🔹 <strong>Networking i współpraca z branżą</strong> – integracja
+            środowiska akademickiego i przemysłowego, udział w prestiżowych
+            konferencjach oraz wydarzeniach technologicznych.
+          </li>
+        </ul>
+
+        <h4><strong>Nasze wydarzenia</strong></h4>
+        <ul class="custom-list">
+          <li>
+            🔸<strong>AI Bootcamp</strong> – intensywny program praktyczny
+            obejmujący klasyfikację, regresję, sieci neuronowe i deep learning.
+          </li>
+          <li>
+            🔸 <strong>Crash course Pythona</strong> – kompleksowy kurs
+            programowania dla studentów i doktorantów, rozwijający kluczowe
+            umiejętności w zakresie kodowania i algorytmiki.
+          </li>
+          <li>
+            🔸 <strong>Prelekcje ekspertów</strong> – spotkania z liderami branży
+            i środowiska akademickiego, prezentujące najnowsze trendy i
+            zastosowania AI.
+          </li>
+          <li>
+            🔸 <strong>Warsztaty dla uczniów szkół średnich</strong> –
+            popularyzujemy AI i programowanie wśród młodzieży, inspirując
+            przyszłych innowatorów.
+          </li>
+          <li>
+            🔸 <strong
+              >Obecność na kluczowych wydarzeniach technologicznych</strong
+            >
+            – znajdziesz nas na <strong>Women in Tech</strong>, gdzie
+            prezentujemy nasze projekty i możliwości współpracy.
+          </li>
+        </ul>
+        <p>
+          <h5>☎️ Bądź na bieżąco!</h5>
+          Wszystkie informacje o naszych wydarzeniach, kursach
+          i rekrutacji znajdziesz na naszym
+          <a
+            href="https://www.facebook.com/DeepDiveUG"
+            target="_blank"
+            class="white-link"
+            >Facebooku</a
+          >. Dołącz do społeczności DeepDive i rozwijaj swoje umiejętności w
+          świecie AI!
+        </p>
+        <h3 class = "subheadings"><strong>Koło Naukowe PatientX</strong></h3>
+        <p>
+          Studenckie Koło Naukowe działające przy <strong>Pracowni
+          Psychoneuroimmunologii i Neuroinformatyki działajacej w Zakładzie
+          Biostatystyki i Sieci Neuronowych GUMed</strong> skupia się na
+          interdyscyplinarnych badaniach łączących <strong>biostatystykę, uczenie
+          maszynowe, neuroinformatykę oraz psychoneuroimmunologię</strong>.
+        </p>
+        <h4><strong>Obszary działalności</strong></h4>
+        <ul class="custom-list">
+          <li>🔹<strong> Analiza danych biomedycznych</strong> – w tym EEG, cytometrii i obrazowania medycznego</li>
+          <li>🔹<strong> Modelowanie procesów neurofizjologicznych i immunologicznych</strong> w kontekście zaburzeń nastroju</li>   
+          <li>🔹<strong> Uczenie maszynowe i sztuczną inteligencję w medycynie</strong> – budowę modeli predykcyjnych dla diagnostyki i terapii</li>
+          <li>🔹<strong> Rozwój narzędzi bioinformatycznych</strong> wspierających medycynę precyzyjną.</li>
+        </ul>
+        <p>Członkowie SKN biorą aktywny udział w <strong>projektach badawczych, publikacjach naukowych, konferencjach oraz warsztatach</strong>,
+          rozwijając swoje kompetencje i współpracując z ekspertami z różnych dziedzin. 
+          Koło kładzie nacisk na <strong>praktyczne zastosowanie nowoczesnych technologii w medycynie</strong>,
+          wspierając przyszłych lekarzy i naukowców w zdobywaniu wiedzy oraz doświadczenia w pracy z danymi biomedycznymi.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/group_pic.jpg" alt="Group foto" />
+      </div>
+      <div class="centered-text">
+        <h3>ZAANGAŻOWANI W PROJEKT</h3>
+      </div>
+      <div class="columns-container">
+        <div class="column">
+          <h4>Członkowie DeepDive</h4>
+          <p><strong>Marta Pągielska</strong> to bioinformatyczka, kształcąca się na studiach magisterskich na kierunku Modelowanie matematyczne i analiza danych. 
+            Od 2022 roku członkini Glycosaminoglycan Computational Group, gdzie zajmuje się rozszyfrowywaniem kodu siarczanowania glikozoaminoglikanów. 
+            W swojej pracy wykorzystuje zaawansowane techniki modelowania molekularnego, algorytmy sztucznej inteligencji oraz obliczenia wysokowydajne,
+            aby uzyskać nowe wglądy w biologicznie istotne mechanizmy molekularne związane z glikozoaminoglikanami. Twórczyni internetowej bazy danych dotyczącej
+            oddziaływań in silico kompleksów katepsyna-glikozaminoglikan.</p>
+          <p><strong>Julia Kuligowska</strong> bioinformatyczka z zamiłowaniem do programowania i nowych technologii. Biegle posługuje się Pythonem, R, HTML i CSS. Studiuje Digital Chemistry na Uniwersytecie Gdańskim. 
+            Pasjonuje się elektroniką, lutowaniem i projektami opartymi na Arduino, a także drukiem 3D, dzięki czemu łączy świat programowania z fizycznymi rozwiązaniami i prototypowaniem.</p>
+          <p><strong>Michalina Żurawek</strong> jest studentką studiów magisterskich na kierunku Biotechnologia na Uniwersytecie Gdańskim,
+            posiadającą tytuł licencjata z Bioinformatyki. Specjalizuje się w analizie danych, wykorzystując sieci neuronowe oraz różnorodne algorytmy obliczeniowe. 
+            Obecnie rozwija umiejętności w tworzeniu aplikacji i stron internetowych z użyciem React Native. Współpracuje z Laboratorium Biochemii Ewolucyjnej, angażując się w innowacyjne projekty badawcze i rozwijając nowe umiejętności oraz metody.
+          </p>
+          <p><strong>Jakub Susoł</strong> studiuje drugi stopień biotechnologii na Międzyuczelnianym Wydziale Biotechnologii UG i GUMed, specjalizując się w bioinformatyce. 
+            Jego praca koncentruje się na tworzeniu modelu matematycznego do przewidywania stałych kinetycznych w wiązaniu białek przy użyciu wyników eksperymentów interferometrii warstw. Programuje w Pythonie i podejmuje się interesujących problemów i pomysłów, stosując różne techniki uczenia maszynowego, sztucznej inteligencji i programowania w Pythonie.
+            Współpracuje z Laboratorium Biochemii Ewolucyjnej i chętnie uczy się nowych technik, umiejętności i metod.</p>
         </div>
-        <div class="image-container">
-            <img src="images/group_pic.jpg" alt="Group foto">
+        <div class="column">
+          <h4>Członkowie PatientX</h4>
+          <p><strong>Szymon Bierzanowski</strong> to elektroradiolog, student studiów II stopnia Inżynieria Biomedyczna.
+            Naukowo zainteresowany psychoneuroimmunologią, elektrofizjologią mózgu i neuroinformatyką.</p>
+          <p><strong>Jakub Pawłowski</strong> to doktorant na Wydziale Nauk o Zdrowiu Gdańskiego Uniwersytetu Medycznego, specjalista w OpenLEK AI Solutions.
+            Zainteresowania naukowe koncentrują się na wykorzystaniu sztucznej inteligencji w predykcji i diagnostyce chorób psychicznych.</p>
+          <p><strong>Wojciech Rusinek</strong> to z wyszkształcenia biolog, doktorant na Wydziale Biologii Uniwersytetu Gdańskiego.
+            Prywatnie zainteresowany tematem zdrowia fizycznego, psychicznego i żywienia, szczególnie w kontekście mikrobiomu i jego wpływu na organizm.</p>
+          <p><strong>Krzysztof Pietruczuk</strong> to badacz łączący neurobiologię, immunologię i modelowanie matematyczne w kontekście zaburzeń nastroju i chorób neurodegeneracyjnych. 
+            Skupia się na wpływie układu odpornościowego na depresję i chorobę afektywną dwubiegunową, szczególnie w kontekście oporności na leczenie i opóźnionych efektów antydepresantów.
+            Kieruje nowo powstała Pracownią Psychoneuroimmunologii i Neuroinformatyki, współpracującym z młodymi naukowcami, przy konsultacji prof. Jacka Witkowskiego. 
+            Laboratorium planuje prowadzenie badań eksperymentalnych i symulacji neurobiologicznych. Jest członkiem PsychoNeuroImmunology Research Society i autorem
+            publikacji o interakcji antydepresantów z układem odpornościowym. Staż podoktorski odbył w laboratorium prof. Tamása Fülöpa na Uniwersytecie Sherbrooke (Kanada),
+            gdzie pracował nad tworzeniem mini-mózgu 3D.</p>
         </div>
-        <div class="icons-container">
-            <a href="https://www.facebook.com/DeepDiveUG" target="_blank">
-                <img src="images/icon_facebook.svg" alt="Fb-icon">
-            </a>
-            <a href="https://www.linkedin.com/company/deepdive-ug/" target="_blank">
-                <img src="images/icon_linkedin.svg" alt="Linked-icon">
-            </a>
-        </div>
-        <div class="logos">
-            <img src="images/all_logo.png" alt="All logo" class="all-logo">
-        </div>
+      </div>
+      
+      <div class="icons-container">
+        <a href="https://www.facebook.com/DeepDiveUG" target="_blank">
+          <img src="images/icon_facebook.svg" alt="Fb-icon" />
+        </a>
+        <a href="https://www.linkedin.com/company/deepdive-ug/" target="_blank">
+          <img src="images/icon_linkedin.svg" alt="Linked-icon" />
+        </a>
+      </div>
+    </div>
+    <div class="logos">
+      <img src="images/all_logo.png" alt="All logo" class="all-logo" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
