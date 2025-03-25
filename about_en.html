@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Goal - DepressionControlApp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: "Arial", sans-serif;
+        background-color: #91c1fe;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        padding: 10px 20px;
+        background-color: #91c1fe !important;
+        position: relative;
+      }
+      .custom-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .navbar-brand {
+        position: relative;
+      }
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      .navbar-collapse {
+        text-align: center;
+      }
+      .nav-link {
+        background-color: #ffbdc5;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px !important;
+        margin: 5px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+      }
+      .nav-link:hover {
+        background-color: #ffcccb;
+        color: #ffffff;
+      }
+      .container-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        flex: 1;
+      }
+      .content {
+        font-size: 1.2rem;
+        color: #ffffff;
+        max-width: 1200px;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 40px;
+      }
+      .custom-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .custom-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+      }
+
+      .custom-list li span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .white-link {
+        color: white;
+        text-decoration: none;
+      }
+      .white-link:hover {
+        text-decoration: underline;
+      }
+      .image-container img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 45px;
+      }
+      .centered-text {
+        color: #ffffff;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .columns-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .column {
+        max-width: 800px;
+        flex: 1;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+      .column p {
+        text-align: justify;
+        hyphens: auto;
+      }
+      .column h3 {
+        color: #ffffff;
+      }
+      .subheadings {
+        color: #ffcccb;
+      }
+      .icons-container {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .icons-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #91c1fe;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+      .icons-container a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+      .icons-container img {
+        width: 30px;
+        height: 30px;
+      }
+      .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        background-color: #91c1fe;
+        padding: 20px 0;
+      }
+      .all-logo {
+        width: 900px;
+        height: auto;
+      }
+      .language-switch {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 28px;
+        right: -10px;
+        z-index: 1030;
+      }
+      .language-switch a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .language-switch img {
+        width: 30px;
+        height: 20px;
+        border-radius: 3px;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .navbar-collapse {
+          position: static;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 700px;
+          height: auto;
+        }
+        .language-switch {
+          top: 29px;
+          right: -10px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .custom-brand {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 380px;
+          height: auto;
+        }
+        .content {
+          margin-top: 0px;
+          margin-bottom: 40px;
+        }
+        .columns-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .column {
+          max-width: 100%;
+          width: 100%;
+        }
+        .language-switch {
+          top: 27px;
+          right: -2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+        }
+        .navbar-brand img {
+          width: 45px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand d-flex align-items-center mx-auto"
+          href="index_en.html"
+        >
+          <img
+            src="images/LOGO_MOZG_biale.svg"
+            alt="Logo"
+            width="50"
+            class="me-2"
+          />
+          <span class="custom-brand">DepressionControlApp</span>
+          <div class="language-switch">
+            <a href="about.html">
+              <img src="images/polish.png" alt="Polish" width="30" height="20" />
+            </a>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarTogglerDemo02"
+        >
+          <ul class="navbar-nav d-flex flex-xl-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="project_en.html">Project Goal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_en.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="questionnaire_en.html">FILL OUT THE SURVEY</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-content">
+      <div class="content">
+        <p>
+          As members of the <strong>PatientX Scientific Club</strong> from the
+          Gdańsk Medical University and the <strong>DeepDive Scientific Club</strong> from the University of Gdańsk, we
+          combine our efforts to create innovative solutions at the intersection of medicine and artificial intelligence.
+        </p>
+        <p>
+          We are proud to announce that our project
+          <strong>DepressionControlApp</strong> won
+          <strong>second place in the Fahrenheit Masters of Cooperation competition</strong>
+          in the category of research and scientific projects. The goal of the project is to create an application that supports the mental health of students and young adults, utilizing AI to monitor mood and personalize therapeutic support. We work interdisciplinarily, integrating
+          <strong>artificial intelligence, neuroinformatics, and biomedical data analysis</strong>
+          to develop innovative technologies that have a real impact on mental health.
+        </p>
+        <p>Get to know us and our competencies!</p>
+        <h3 class="subheadings"><strong>DeepDive Scientific Club</strong></h3>
+        <p>
+          <strong>Exploring artificial intelligence. Creating innovations. Connecting science with practice.</strong>
+        </p>
+        <p>
+          DeepDive is an interdisciplinary community of students and doctoral candidates from various departments, operating at the Faculty of Mathematics, Physics, and Computer Science at the University of Gdańsk, focused on research and implementation of modern technologies based on artificial intelligence. Our activities combine theory with practice, providing students with tools to solve real-world problems in science and industry.
+        </p>
+        <h4><strong>Areas of Activity</strong></h4>
+        <ul class="custom-list">
+          <li>
+            🔹 <strong>Advanced AI Systems</strong> – designing and implementing machine learning models, neural networks, and deep learning algorithms used in data analysis, diagnostics, and process automation.
+          </li>
+          <li>
+            🔹 <strong>Data Science and Predictive Modeling</strong> – exploring, visualizing, and analyzing large-scale datasets, building predictive models, and optimizing decision-making processes.
+          </li>
+          <li>
+            🔹 <strong>Intensive Training Programs</strong> – providing solid programming foundations and organizing specialized workshops and bootcamps in AI.
+          </li>
+          <li>
+            🔹 <strong>Creating AI Software and Applications</strong> – designing and implementing tools and systems based on artificial intelligence, developing applications that utilize machine learning and process automation.
+          </li>
+          <li>
+            🔹 <strong>Research and Development Projects</strong> – implementing innovative initiatives in collaboration with experts, research centers, and business partners.
+          </li>
+          <li>
+            🔹 <strong>Networking and Industry Collaboration</strong> – integrating academic and industrial environments, participating in prestigious conferences and technological events.
+          </li>
+        </ul>
+
+        <h4><strong>Our Events</strong></h4>
+        <ul class="custom-list">
+          <li>
+            🔸<strong>AI Bootcamp</strong> – an intensive practical program covering classification, regression, neural networks, and deep learning.
+          </li>
+          <li>
+            🔸 <strong>Crash Course in Python</strong> – a comprehensive programming course for students and doctoral candidates, developing key coding and algorithmic skills.
+          </li>
+          <li>
+            🔸 <strong>Expert Lectures</strong> – meetings with industry and academic leaders presenting the latest trends and applications of AI.
+          </li>
+          <li>
+            🔸 <strong>Workshops for High School Students</strong> – promoting AI and programming among youth, inspiring future innovators.
+          </li>
+          <li>
+            🔸 <strong>Presence at Key Technological Events</strong> – find us at <strong>Women in Tech</strong>, where we present our projects and collaboration opportunities.
+          </li>
+        </ul>
+        <p>
+          <h5>☎️ Stay Updated!</h5>
+          All information about our events, courses, and recruitment can be found on our
+          <a
+            href="https://www.facebook.com/DeepDiveUG"
+            target="_blank"
+            class="white-link"
+            >Facebook</a
+          >. Join the DeepDive community and develop your skills in the world of AI!
+        </p>
+        <h3 class = "subheadings"><strong>PatientX Scientific Club</strong></h3>
+        <p>
+          A student scientific club operating at the <strong>Laboratory of Psychoneuroimmunology and Neuroinformatics</strong> within the Department of Biostatistics and Neural Networks at GUMed, focusing on interdisciplinary research combining <strong>biostatistics, machine learning, neuroinformatics, and psychoneuroimmunology</strong>.
+        </p>
+        <h4><strong>Areas of Activity</strong></h4>
+        <ul class="custom-list">
+          <li>🔹<strong> Analysis of Biomedical Data</strong> – including EEG, cytometry, and medical imaging.</li>
+          <li>🔹<strong> Modeling Neurophysiological and Immunological Processes</strong> in the context of mood disorders.</li>
+          <li>🔹<strong> Machine Learning and Artificial Intelligence in Medicine</strong> – building predictive models for diagnostics and therapy.</li>
+          <li>🔹<strong> Development of Bioinformatics Tools</strong> supporting precision medicine.</li>
+        </ul>
+        <p>Members of the SKN actively participate in <strong>research projects, scientific publications, conferences, and workshops</strong>, developing their competencies and collaborating with experts from various fields. The club emphasizes the <strong>practical application of modern technologies in medicine</strong>, supporting future doctors and scientists in acquiring knowledge and experience in working with biomedical data.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/group_pic.jpg" alt="Group photo" />
+      </div>
+      <div class="centered-text">
+        <h3>ENGAGED IN THE PROJECT</h3>
+      </div>
+      <div class="columns-container">
+        <div class="column">
+          <h4>DeepDive Members</h4>
+          <p><strong>Marta Pągielska</strong> is a bioinformatician pursuing a master's degree in Mathematical Modeling and Data Analysis. Since 2022, she has been a member of the Glycosaminoglycan Computational Group, where she deciphers the sulfation code of glycosaminoglycans. In her work, she employs advanced molecular modeling techniques, AI algorithms, and high-performance computing to gain new insights into biologically significant molecular mechanisms related to glycosaminoglycans. She is the creator of an online database on in silico interactions of cathepsin-glycosaminoglycan complexes.</p>
+          <p><strong>Julia Kuligowska</strong> is a bioinformatician passionate about programming and new technologies. She is proficient in Python, R, HTML, and CSS. Studying Digital Chemistry at the University of Gdańsk, she is enthusiastic about electronics, soldering, Arduino-based projects, and 3D printing, combining the world of programming with physical solutions and prototyping.</p>
+          <p><strong>Michalina Żurawek</strong> is a master's student in Biotechnology at the University of Gdańsk, holding a bachelor's degree in Bioinformatics. She specializes in data analysis using neural networks and various computational algorithms. Currently, she is developing skills in creating applications and websites using React Native. She collaborates with the Laboratory of Evolutionary Biochemistry, engaging in innovative research projects and developing new skills and methods.</p>
+          <p><strong>Jakub Susoł</strong> is pursuing a master's degree in biotechnology at the Intercollegiate Faculty of Biotechnology of UG and GUMed, specializing in bioinformatics. His work focuses on creating a mathematical model to predict kinetic constants in protein binding using interferometry experiment results. He programs in Python and tackles interesting problems and ideas, applying various machine learning, AI, and programming techniques.</p>
+        </div>
+        <div class="column">
+          <h4>PatientX Members</h4>
+          <p><strong>Szymon Bierzanowski</strong> is an electroradiologist and a second-year student in Biomedical Engineering. His scientific interests include psychoneuroimmunology, brain electrophysiology, and neuroinformatics.</p>
+          <p><strong>Jakub Pawłowski</strong> is a PhD candidate at the Faculty of Health Sciences of the Medical University of Gdańsk, specializing in OpenLEK AI Solutions. His research interests focus on the use of artificial intelligence in predicting and diagnosing mental disorders.</p>
+          <p><strong>Wojciech Rusinek</strong> is a biologist and a PhD candidate at the Faculty of Biology of the University of Gdańsk. He is personally interested in physical, mental health, and nutrition, particularly in the context of the microbiome and its impact on the body.</p>
+          <p><strong>Krzysztof Pietruczuk</strong> is a researcher combining neurobiology, immunology, and mathematical modeling in the context of mood disorders and neurodegenerative diseases. He focuses on the impact of the immune system on depression and bipolar affective disorder, particularly in the context of treatment resistance and delayed effects of antidepressants. He leads the newly established Laboratory of Psychoneuroimmunology and Neuroinformatics, collaborating with young scientists under the supervision of Prof. Jacek Witkowski. The laboratory plans to conduct experimental research and neurobiological simulations. He is a member of the PsychoNeuroImmunology Research Society and the author of publications on the interaction of antidepressants with the immune system. He completed a postdoctoral fellowship in the laboratory of Prof. Tamás Fülöp at the University of Sherbrooke (Canada), where he worked on creating 3D mini-brains.</p>
+        </div>
+      </div>
+
+      <div class="icons-container">
+        <a href="https://www.facebook.com/DeepDiveUG" target="_blank">
+          <img src="images/icon_facebook.svg" alt="Fb-icon" />
+        </a>
+        <a href="https://www.linkedin.com/company/deepdive-ug/" target="_blank">
+          <img src="images/icon_linkedin.svg" alt="Linked-icon" />
+        </a>
+        <a href="mailto:" target="_blank">
+          <img src="images/icon_email.png" alt="Email-icon" />
+        </a>
+      </div>
+    </div>
+    <div class="logos">
+      <img src="images/all_logo.png" alt="All logo" class="all-logo" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

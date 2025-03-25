@@ -12,17 +12,18 @@
       body,
       html {
         margin: 0;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
         font-family: "Arial", sans-serif;
-        background-color: #92c5f8;
+        background-color: #91c1fe;
         height: 100%;
         display: flex;
         flex-direction: column;
       }
       .navbar {
         padding: 10px 20px;
-        background-color: #92c5f8 !important;
+        background-color: #91c1fe !important;
+        position: relative;
       }
       .custom-brand {
         font-size: 2rem;
@@ -31,6 +32,9 @@
         display: flex;
         align-items: center;
         gap: 20px;
+      }
+      .navbar-brand {
+        position: relative;
       }
       .navbar-toggler {
         border: none;
@@ -57,6 +61,24 @@
         background-color: #ffcccb;
         color: #ffffff;
       }
+      .language-switch {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 28px;
+        right: -10px;
+        z-index: 1030;
+      }
+      .language-switch a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .language-switch img {
+        width: 30px;
+        height: 20px;
+        border-radius: 3px;
+      }
       .container-content {
         display: flex;
         flex-direction: column;
@@ -67,7 +89,7 @@
         flex: 1;
       }
       .content {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: #ffffff;
         max-width: 1200px;
         text-align: left;
@@ -91,7 +113,6 @@
         top: 50%;
         transform: translateY(-50%);
       }
-      /* Facebook, button in text */
       .white-link {
         color: white;
         text-decoration: none;
@@ -108,31 +129,31 @@
       .centered-text {
         color: #ffffff;
         text-align: center;
+        font-size: 1.1rem;
       }
 
       .columns-container {
         display: flex;
         justify-content: space-between;
-        gap: 30px; 
-        margin-top: 20px; 
+        gap: 30px;
+        margin-top: 20px;
       }
 
       .column {
         max-width: 800px;
         flex: 1;
-        color: #ffffff; 
-        font-size: 1.2rem;
+        color: #ffffff;
+        font-size: 1rem;
       }
       .column p {
         text-align: justify;
         hyphens: auto;
       }
       .column h3 {
-        color: #ffffff; 
+        color: #ffffff;
       }
       .subheadings {
         color: #ffcccb;
-
       }
       .icons-container {
         margin-bottom: 15px;
@@ -147,7 +168,7 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: #92c5f8;
+        background-color: #91c1fe;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: 0.3s;
       }
@@ -164,13 +185,14 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        background-color: #92c5f8;
+        background-color: #91c1fe;
         padding: 20px 0;
       }
       .all-logo {
         width: 900px;
         height: auto;
       }
+
 
       @media (max-width: 991px) {
         .navbar-nav {
@@ -186,6 +208,10 @@
         .all-logo {
           width: 700px;
           height: auto;
+        }
+        .language-switch {
+          top: 29px;
+          right: -10px;
         }
       }
 
@@ -226,6 +252,26 @@
           max-width: 100%;
           width: 100%;
         }
+        .language-switch {
+          top: 27px;
+          right: -2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+        }
+        .navbar-brand img {
+          width: 45px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
       }
     </style>
   </head>
@@ -243,6 +289,11 @@
             class="me-2"
           />
           <span class="custom-brand">DepressionControlApp</span>
+          <div class="language-switch">
+            <a href="about_en.html">
+              <img src="images/united-kingdom.png" alt="English" />
+            </a>
+          </div>
         </a>
         <button
           class="navbar-toggler"
@@ -404,17 +455,17 @@
         <h4><strong>Obszary działalności</strong></h4>
         <ul class="custom-list">
           <li>🔹<strong> Analiza danych biomedycznych</strong> – w tym EEG, cytometrii i obrazowania medycznego</li>
-          <li>🔹<strong> Modelowanie procesów neurofizjologicznych i immunologicznych</strong> w kontekście zaburzeń nastroju</li>   
+          <li>🔹<strong> Modelowanie procesów neurofizjologicznych i immunologicznych</strong> w kontekście zaburzeń nastroju</li>
           <li>🔹<strong> Uczenie maszynowe i sztuczną inteligencję w medycynie</strong> – budowę modeli predykcyjnych dla diagnostyki i terapii</li>
           <li>🔹<strong> Rozwój narzędzi bioinformatycznych</strong> wspierających medycynę precyzyjną.</li>
         </ul>
         <p>Członkowie SKN biorą aktywny udział w <strong>projektach badawczych, publikacjach naukowych, konferencjach oraz warsztatach</strong>,
-          rozwijając swoje kompetencje i współpracując z ekspertami z różnych dziedzin. 
+          rozwijając swoje kompetencje i współpracując z ekspertami z różnych dziedzin.
           Koło kładzie nacisk na <strong>praktyczne zastosowanie nowoczesnych technologii w medycynie</strong>,
           wspierając przyszłych lekarzy i naukowców w zdobywaniu wiedzy oraz doświadczenia w pracy z danymi biomedycznymi.</p>
       </div>
       <div class="image-container">
-        <img src="images/group_pic.jpg" alt="Group foto" />
+        <img src="images/group_pic.jpg" alt="Group photo" />
       </div>
       <div class="centered-text">
         <h3>ZAANGAŻOWANI W PROJEKT</h3>
@@ -422,18 +473,18 @@
       <div class="columns-container">
         <div class="column">
           <h4>Członkowie DeepDive</h4>
-          <p><strong>Marta Pągielska</strong> to bioinformatyczka, kształcąca się na studiach magisterskich na kierunku Modelowanie matematyczne i analiza danych. 
-            Od 2022 roku członkini Glycosaminoglycan Computational Group, gdzie zajmuje się rozszyfrowywaniem kodu siarczanowania glikozoaminoglikanów. 
+          <p><strong>Marta Pągielska</strong> to bioinformatyczka, kształcąca się na studiach magisterskich na kierunku Modelowanie matematyczne i analiza danych.
+            Od 2022 roku członkini Glycosaminoglycan Computational Group, gdzie zajmuje się rozszyfrowywaniem kodu siarczanowania glikozoaminoglikanów.
             W swojej pracy wykorzystuje zaawansowane techniki modelowania molekularnego, algorytmy sztucznej inteligencji oraz obliczenia wysokowydajne,
             aby uzyskać nowe wglądy w biologicznie istotne mechanizmy molekularne związane z glikozoaminoglikanami. Twórczyni internetowej bazy danych dotyczącej
-            oddziaływań in silico kompleksów katepsyna-glikozaminoglikan.</p>
-          <p><strong>Julia Kuligowska</strong> bioinformatyczka z zamiłowaniem do programowania i nowych technologii. Biegle posługuje się Pythonem, R, HTML i CSS. Studiuje Digital Chemistry na Uniwersytecie Gdańskim. 
+            oddziaływań in silico kompleksów katepsyna-glikozoaminoglikan.</p>
+          <p><strong>Julia Kuligowska</strong> bioinformatyczka z zamiłowaniem do programowania i nowych technologii. Biegle posługuje się Pythonem, R, HTML i CSS. Studiuje Digital Chemistry na Uniwersytecie Gdańskim.
             Pasjonuje się elektroniką, lutowaniem i projektami opartymi na Arduino, a także drukiem 3D, dzięki czemu łączy świat programowania z fizycznymi rozwiązaniami i prototypowaniem.</p>
           <p><strong>Michalina Żurawek</strong> jest studentką studiów magisterskich na kierunku Biotechnologia na Uniwersytecie Gdańskim,
-            posiadającą tytuł licencjata z Bioinformatyki. Specjalizuje się w analizie danych, wykorzystując sieci neuronowe oraz różnorodne algorytmy obliczeniowe. 
+            posiadającą tytuł licencjata z Bioinformatyki. Specjalizuje się w analizie danych, wykorzystując sieci neuronowe oraz różnorodne algorytmy obliczeniowe.
             Obecnie rozwija umiejętności w tworzeniu aplikacji i stron internetowych z użyciem React Native. Współpracuje z Laboratorium Biochemii Ewolucyjnej, angażując się w innowacyjne projekty badawcze i rozwijając nowe umiejętności oraz metody.
           </p>
-          <p><strong>Jakub Susoł</strong> studiuje drugi stopień biotechnologii na Międzyuczelnianym Wydziale Biotechnologii UG i GUMed, specjalizując się w bioinformatyce. 
+          <p><strong>Jakub Susoł</strong> studiuje drugi stopień biotechnologii na Międzyuczelnianym Wydziale Biotechnologii UG i GUMed, specjalizując się w bioinformatyce.
             Jego praca koncentruje się na tworzeniu modelu matematycznego do przewidywania stałych kinetycznych w wiązaniu białek przy użyciu wyników eksperymentów interferometrii warstw. Programuje w Pythonie i podejmuje się interesujących problemów i pomysłów, stosując różne techniki uczenia maszynowego, sztucznej inteligencji i programowania w Pythonie.
             Współpracuje z Laboratorium Biochemii Ewolucyjnej i chętnie uczy się nowych technik, umiejętności i metod.</p>
         </div>
@@ -445,21 +496,24 @@
             Zainteresowania naukowe koncentrują się na wykorzystaniu sztucznej inteligencji w predykcji i diagnostyce chorób psychicznych.</p>
           <p><strong>Wojciech Rusinek</strong> to z wyszkształcenia biolog, doktorant na Wydziale Biologii Uniwersytetu Gdańskiego.
             Prywatnie zainteresowany tematem zdrowia fizycznego, psychicznego i żywienia, szczególnie w kontekście mikrobiomu i jego wpływu na organizm.</p>
-          <p><strong>Krzysztof Pietruczuk</strong> to badacz łączący neurobiologię, immunologię i modelowanie matematyczne w kontekście zaburzeń nastroju i chorób neurodegeneracyjnych. 
+          <p><strong>Krzysztof Pietruczuk</strong> to badacz łączący neurobiologię, immunologię i modelowanie matematyczne w kontekście zaburzeń nastroju i chorób neurodegeneracyjnych.
             Skupia się na wpływie układu odpornościowego na depresję i chorobę afektywną dwubiegunową, szczególnie w kontekście oporności na leczenie i opóźnionych efektów antydepresantów.
-            Kieruje nowo powstała Pracownią Psychoneuroimmunologii i Neuroinformatyki, współpracującym z młodymi naukowcami, przy konsultacji prof. Jacka Witkowskiego. 
+            Kieruje nowo powstała Pracownią Psychoneuroimmunologii i Neuroinformatyki, współpracującym z młodymi naukowcami, przy konsultacji prof. Jacka Witkowskiego.
             Laboratorium planuje prowadzenie badań eksperymentalnych i symulacji neurobiologicznych. Jest członkiem PsychoNeuroImmunology Research Society i autorem
             publikacji o interakcji antydepresantów z układem odpornościowym. Staż podoktorski odbył w laboratorium prof. Tamása Fülöpa na Uniwersytecie Sherbrooke (Kanada),
             gdzie pracował nad tworzeniem mini-mózgu 3D.</p>
         </div>
       </div>
-      
+
       <div class="icons-container">
         <a href="https://www.facebook.com/DeepDiveUG" target="_blank">
           <img src="images/icon_facebook.svg" alt="Fb-icon" />
         </a>
         <a href="https://www.linkedin.com/company/deepdive-ug/" target="_blank">
           <img src="images/icon_linkedin.svg" alt="Linked-icon" />
+        </a>
+        <a href="mailto:" target="_blank">
+          <img src="images/icon_email.png" alt="Email-icon" />
         </a>
       </div>
     </div>
