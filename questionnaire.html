@@ -77,8 +77,8 @@
       .iframe-container {
         width: 100%;
         max-width: 800px;
-        height: 90vh; /* Zwiększona wysokość */
-        min-height: 600px; /* Zapewnienie minimalnej wysokości */
+        height: 90vh;
+        min-height: 600px;
         margin: auto;
         background: #ffffff;
         border-radius: 10px;
@@ -89,13 +89,15 @@
         width: 100%;
         height: 100%;
         border: none;
-        overflow: auto; /* Zapewnienie przewijania jeśli potrzebne */
+        overflow: auto;
       }
-
       .logos {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
+        background-color: #5eb7fe;
+        padding: 10px 0;
       }
 
       .all-logo {
@@ -121,7 +123,12 @@
         border-radius: 3px;
       }
       .ukrainian-section {
-        margin-top: 20px;
+        width: 100%;
+        background-color: #5eb7fe;
+        text-align: center;
+        padding: 20px 15px;
+        font-size: 1rem;
+        margin-top: 30px;
       }
 
       @media (max-width: 991px) {
@@ -176,6 +183,69 @@
         .nav-link {
           font-size: 1rem;
           padding: 5px 5px !important;
+        }
+        .ukrainian-section {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 130px;
+        }
+      }
+      @media (max-width: 375px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .navbar-toggler {
+          position: relative;
+          right: 5px;
+        }
+        .custom-brand {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 350px;
+          height: auto;
+        }
+        .language-switch {
+          top: 25px;
+          right: 2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+          left: -10px;
+        }
+        .navbar-brand img {
+          width: 40px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
+
+        .ukrainian-section {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 200px;
+          font-size: 0.8rem;
         }
       }
     </style>
@@ -232,7 +302,8 @@
     <div class="container-content">
       <div class="iframe-container">
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfurPiUH3lahvfZ91H4pG9AFnr1wj0Q_hFXpUOb5gFrFlXbew/viewform?usp=sf_link"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfurPiUH3lahvfZ91H4pG9AFnr1wj0Q_hFXpUOb5gFrFlXbew/viewform?embedded=true"
+          allowfullscreen
         ></iframe>
       </div>
       <div class="ukrainian-section">

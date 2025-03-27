@@ -151,9 +151,15 @@
         }
         .custom-brand {
           font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 20px;
         }
         .content {
           font-size: 1rem;
+          text-align: justify;
         }
         .all-logo {
           width: 380px;
@@ -169,11 +175,78 @@
         }
         .navbar-brand {
           position: relative;
-          display: absolute;
           align-items: center;
+          left: -5px;
         }
         .navbar-brand img {
           width: 45px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
+        .navbar-nav .nav-link {
+          padding: 10px 18px !important;
+        }
+      }
+      @media (max-width: 375px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .navbar-toggler {
+          position: relative;
+          right: 5px;
+        }
+        .custom-brand {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 350px;
+          height: auto;
+        }
+        .content {
+          margin-top: 0px;
+          margin-bottom: 20px;
+          text-align: justify;
+        }
+        .columns-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .column {
+          max-width: 100%;
+          width: 100%;
+        }
+        .language-switch {
+          top: 25px;
+          right: 2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+          left: -10px;
+        }
+        .navbar-brand img {
+          width: 40px;
         }
         .nav-link {
           font-size: 1rem;
