@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankieta - DepressionControlApp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: "Arial", sans-serif;
+        background-color: #5eb7fe;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        padding: 10px 20px;
+        background-color: #5eb7fe !important;
+        position: relative;
+      }
+      .custom-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .navbar-brand {
+        position: relative;
+      }
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      .navbar-collapse {
+        text-align: center;
+      }
+      .nav-link {
+        background-color: #ffbdc5;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px !important;
+        margin: 5px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+      }
+      .nav-link:hover {
+        background-color: #ffcccb;
+        color: #ffffff;
+      }
+      .container-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 1.3rem;
+      }
+      .content {
+        font-size: 1.1rem;
+        color: #ffffff;
+        max-width: 1000px;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      .question {
+        margin-bottom: 25px;
+        margin-bottom: 25px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.112);
+        border: 2px solid #ffffff;
+        border-radius: 15px;
+      }
+
+      .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        background-color: #5eb7fe;
+        padding: 10px 0;
+      }
+
+      .all-logo {
+        width: 900px;
+        height: auto;
+      }
+      .language-switch {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 28px;
+        right: -10px;
+        z-index: 1030;
+      }
+      .language-switch a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .language-switch img {
+        width: 30px;
+        height: 20px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand d-flex align-items-center mx-auto"
+          href="index.html"
+        >
+          <img
+            src="images/LOGO_MOZG_biale.svg"
+            alt="Logo"
+            width="50"
+            class="me-2"
+          />
+          <span class="custom-brand">DepressionControlApp</span>
+          <div class="language-switch">
+            <a href="test_en.html">
+              <img src="images/united-kingdom.png" alt="English" />
+            </a>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarTogglerDemo02"
+        >
+          <ul class="navbar-nav d-flex flex-xl-row align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="project.html">Cel projektu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">O nas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="questionnaire.html">WYPEŁNIJ ANKIETĘ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="test.html">Test</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-content">
+      <h2 class="mb-4"><strong>Skala Depresji Becka</strong></h2>
+      <div class="content">
+        <p>
+          <strong>Test Becka (Skala Depresji Becka)</strong> to jedno z
+          najczęściej stosowanych narzędzi do samodzielnej oceny nastroju i
+          wczesnego rozpoznawania objawów depresji. Składa się z zestawu pytań,
+          które dotyczą naszych emocji, myśli i zachowań z ostatnich dni.
+          Udzielając szczerych odpowiedzi, możemy uzyskać wstępną informację o
+          tym, czy warto skonsultować się z lekarzem lub psychologiem.
+          <strong
+            >Test Becka nie służy do stawiania diagnozy, a jedynie jako pomocne
+            narzędzie przesiewowe – diagnozę depresji może postawić wyłącznie
+            specjalista.</strong
+          >
+        </p>
+        <p>⦿ Instrukcja wypełnienia testu:</p>
+        <p>
+          W każdym pytaniu wybierz tylko jedną odpowiedź, która najlepiej
+          określa Twoje uczucia podczas ostatnich 7 dni (a nie tylko w dniu
+          dzisiejszym). W przypadku wątpliwości, zadaj sobie pytanie: Która z
+          odpowiedzi jest najbliższa temu co czuję i myślę?
+        </p>
+      </div>
+      <form id="quizForm">
+        <div id="questions"></div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">Zakończ test</button>
+        </div>
+      </form>
+      <div id="result" class="mt-4 alert alert-info d-none"></div>
+      <div id="interpretation" class="mt-3 d-none">
+        <h4>Interpretacja wyniku</h4>
+        <p id="interpretation-text"></p>
+      </div>
+    </div>
+
+    <div class="logos">
+      <img src="images/all_logo.png" alt="All logo" class="all-logo" />
+    </div>
+
+    <script>
+      const questions = [
+        [
+          "Nie jestem smutny ani przygnębiony.",
+          "Odczuwam często smutek, przygnębienie.",
+          "Przeżywam stale smutek, przygnębienie i nie mogę uwolnić się od tych przeżyć.",
+          "Jestem stale tak smutny i nieszczęśliwy, że jest to nie do wytrzymania.",
+        ],
+        [
+          "Nie przejmuję się zbytnio przyszłością.",
+          "Często martwię się o przyszłość.",
+          "Obawiam się, że w przyszłości nic dobrego mnie nie czeka.",
+          "Czuję, że przyszłość jest beznadziejna i nic tego nie zmieni.",
+        ],
+        [
+          "Sądzę, że nie popełniam większych zaniedbań.",
+          "Sądzę, że czynię więcej zaniedbań niż inni.",
+          "Kiedy spoglądam na to, co robiłem, widzę mnóstwo błędów i zaniedbań.",
+          "Jestem zupełnie niewydolny i wszystko robię źle.",
+        ],
+        [
+          "To, co robię, sprawia mi przyjemność.",
+          "Nie cieszy mnie to, co robię.",
+          "Nic mi teraz nie daje prawdziwego zadowolenia.",
+          "Nie potrafię przeżywać zadowolenia i przyjemności; wszystko mnie nuży.",
+        ],
+        [
+          "Nie czuję się winnym ani wobec siebie, ani wobec innych.",
+          "Dość często miewam wyrzuty sumienia.",
+          "Często czuję, że zawiniłem.",
+          "Stale czuję się winny.",
+        ],
+        [
+          "Sądzę, że nie zasługuję na karę.",
+          "Sądzę, że zasługuję na karę.",
+          "Spodziewam się ukarania.",
+          "Wiem, że jestem karany (lub ukarany).",
+        ],
+        [
+          "Jestem z siebie zadowolony.",
+          "Nie jestem z siebie zadowolony.",
+          "Czuję do siebie niechęć.",
+          "Nienawidzę siebie.",
+        ],
+        [
+          "Nie czuję się gorszy od innych ludzi.",
+          "Zarzucam sobie, że jestem nieudolny i popełniam błędy.",
+          "Stale potępiam siebie za popełnione błędy.",
+          "Winię siebie za wszelkie zło, które istnieje.",
+        ],
+        [
+          "Nie myślę o odebraniu sobie życia.",
+          "Myślę o samobójstwie — ale nie mógłbym tego dokonać.",
+          "Pragnę odebrać sobie życie.",
+          "Popełnię samobójstwo, jak będzie odpowiednia sposobność.",
+        ],
+        [
+          "Nie płaczę częściej niż zwykle.",
+          "Płaczę częściej niż dawniej.",
+          "Ciągle chce mi się płakać.",
+          "Chciałbym płakać, lecz nie jestem w stanie.",
+        ],
+        [
+          "Nie jestem bardziej podenerwowany niż dawniej.",
+          "Jestem bardziej nerwowy i przykry niż dawniej.",
+          "Jestem stale zdenerwowany lub rozdrażniony.",
+          "Wszystko, co dawniej mnie drażniło, stało się obojętne.",
+        ],
+        [
+          "Ludzie interesują mnie jak dawniej.",
+          "Interesuję się ludźmi mniej niż dawniej.",
+          "Utraciłem większość zainteresowań innymi ludźmi.",
+          "Utraciłem wszelkie zainteresowanie innymi ludźmi.",
+        ],
+        [
+          "Decyzje podejmuję łatwo, tak jak dawniej.",
+          "Częściej niż kiedyś odwlekam podjęcie decyzji.",
+          "Mam dużo trudności z podjęciem decyzji.",
+          "Nie jestem w stanie podjąć żadnej decyzji.",
+        ],
+        [
+          "Sądzę, że wyglądam nie gorzej niż dawniej.",
+          "Martwię się tym, że wyglądam staro i nieatrakcyjnie.",
+          "Czuję, że wyglądam coraz gorzej.",
+          "Jestem przekonany, że wyglądam okropnie i odpychająco.",
+        ],
+        [
+          "Mogę pracować jak dawniej.",
+          "Z trudem rozpoczynam każdą czynność.",
+          "Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek.",
+          "Nie jestem w stanie nic zrobić.",
+        ],
+        [
+          "Sypiam dobrze, jak zwykle.",
+          "Sypiam gorzej niż dawniej.",
+          "Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć.",
+          "Budzę się kilka godzin za wcześnie i nie mogę usnąć.",
+        ],
+        [
+          "Nie męczę się bardziej niż dawniej.",
+          "Męczę się znacznie łatwiej niż poprzednio.",
+          "Męczę się wszystkim, co robię.",
+          "Jestem zbyt zmęczony, aby cokolwiek robić.",
+        ],
+        [
+          "Mam apetyt nie gorszy niż dawniej.",
+          "Mam trochę gorszy apetyt.",
+          "Apetyt mam wyraźnie gorszy.",
+          "Nie mam w ogóle apetytu.",
+        ],
+        [
+          "Nie tracę na wadze (w okresie ostatniego miesiąca).",
+          "Straciłem na wadze więcej niż 2 kg.",
+          "Straciłem na wadze więcej niż 4 kg.",
+          "Straciłem na wadze więcej niż 6 kg.",
+        ],
+        [
+          "Nie martwię się o swoje zdrowie bardziej niż zawsze.",
+          "Martwię się swoimi dolegliwościami, mam rozstrój żołądka, zaparcie, bóle.",
+          "Stan mojego zdrowia bardzo mnie martwi, często o tym myślę.",
+          "Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć.",
+        ],
+        [
+          "Moje zainteresowania seksualne nie uległy zmianom.",
+          "Jestem mniej zainteresowany sprawami płci (seksu).",
+          "Problemy płciowe wyraźnie mniej mnie interesują.",
+          "Utraciłem wszelkie zainteresowanie sprawami seksu.",
+        ],
+      ];
+
+      const formDiv = document.getElementById("questions");
+      questions.forEach((q, idx) => {
+        const qHtml = `<div class="question">
+        <label class="form-label"><strong>Pytanie ${
+          idx + 1
+        }</strong></label><br>
+        ${q
+          .map(
+            (opt, i) => `
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q${idx}" value="${i}" required>
+            <label class="form-check-label">${opt}</label>
+          </div>
+        `
+          )
+          .join("")}
+      </div>`;
+        formDiv.insertAdjacentHTML("beforeend", qHtml);
+      });
+
+      document
+        .getElementById("quizForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          let score = 0;
+          for (let i = 0; i < questions.length; i++) {
+            const selected = document.querySelector(
+              `input[name="q${i}"]:checked`
+            );
+            if (selected) score += parseInt(selected.value);
+          }
+
+          const resultDiv = document.getElementById("result");
+          const interpretationText = document.getElementById(
+            "interpretation-text"
+          );
+          const interpretationBox = document.getElementById("interpretation");
+
+          let interpretation = "";
+          if (score <= 11) {
+            interpretation = `<strong>Od 0 do 11</strong> – Prawdopodobnie to tymczasowe pogorszenie nastroju, spowodowane bieżącymi wydarzeniami w Twoim życiu. Jeśli
+            przykre objawy będą utrzymywać się nadal, wykonaj ten test po 7 dniach i porównaj wyniki czy następuje pogorszenie czy poprawa.`;
+          } else if (score <= 19) {
+            interpretation = `<strong>Od 12 do 19</strong>  – Wynik w tym przedziale wskazuje na potrzebę udania się do psychologa lub psychoterapeuty w celu dalszej diagnostyki. Łagodne objawy depresyjne leczone są psychoterapią, bez konieczności włączania farmakoterapii.
+Psycholog/ psychoterapeuta w razie konieczności skieruje Cię do lekarza psychiatry.`;
+          } else if (score <= 25) {
+            interpretation = `<strong>Od 20 do 25</strong>  – Punktacja w tym przedziale sugeruje podjęcie szybkich działań i kontakt z psychologiem/psychoterapeutą lub psychiatrą. Istnieje prawdopodobieństwo włączenia leczenia farmakologicznego, przeciwdepresyjnego przez psychiatrę. Ważne aby oprócz działań farmakologicznych rozpocząć psychoterapię. To warunkuje skuteczne leczenie depresji.`;
+          } else {
+            interpretation = `<strong>Od 26 do 63</strong>  – Konieczne jest udanie się do lekarza psychiatry. To niebezpieczny stan dla zdrowia i życia, głównie gdy pojawiają się
+myśli samobójcze. Psychoterapia jest bardziej intensywna. W niektórych przypadkach koniczne jest leczenie szpitalne
+aby nie dopuścić do zagrożenia życia.`;
+          }
+
+          resultDiv.textContent = `Wynik: ${score} pkt`;
+          resultDiv.classList.remove("d-none");
+          interpretationText.innerHTML = interpretation;
+          interpretationBox.classList.remove("d-none");
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
