@@ -70,7 +70,7 @@
         font-size: 1.3rem;
       }
       .content {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: #ffffff;
         max-width: 1000px;
         text-align: left;
@@ -116,6 +116,114 @@
         width: 30px;
         height: 20px;
         border-radius: 3px;
+      }
+      @media (max-width: 991px) {
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+
+        .all-logo {
+          width: 700px;
+          height: auto;
+        }
+        .language-switch {
+          top: 29px;
+          right: -10px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .custom-brand {
+          font-size: 1.2rem;
+        }
+        .all-logo {
+          width: 380px;
+          height: auto;
+        }
+        .language-switch {
+          top: 27px;
+          right: -2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+        }
+        .navbar-brand img {
+          width: 45px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
+        .container-content {
+          font-size: 1.1rem;
+        }
+      }
+      @media (max-width: 375px) {
+        body,
+        html {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+        .navbar-toggler {
+          position: relative;
+          right: 5px;
+        }
+        .custom-brand {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .container-content {
+          font-size: 1rem;
+        }
+        .all-logo {
+          width: 350px;
+          height: auto;
+        }
+        .language-switch {
+          top: 25px;
+          right: 2px;
+        }
+        .language-switch img {
+          width: 25px;
+          height: 20px;
+        }
+        .navbar-brand {
+          position: relative;
+          display: absolute;
+          align-items: center;
+          left: -10px;
+        }
+        .navbar-brand img {
+          width: 40px;
+        }
+        .nav-link {
+          font-size: 1rem;
+          padding: 5px 5px !important;
+        }
       }
     </style>
   </head>
